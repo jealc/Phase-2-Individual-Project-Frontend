@@ -25,7 +25,7 @@ const Poems = () => {
         {poems.map((poem) => (
           <div key={poem.id} className='poemBox'>
             <h3>{poem.title}</h3>
-            <p>{poem.content}</p>
+            <p>{poem.description}</p>
             {/* Display other details of the poem as needed */}
           </div>
         ))}

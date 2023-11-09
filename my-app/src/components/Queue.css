@@ -1,12 +1,12 @@
-.storiesContainer {
+.queueContainer {
     background-color: #fff;
     padding: 20px;
-    height: auto;
+    height: 400px;
     width: auto;
     border-radius: 10px;
 }
   
-.storiesList {
+.queueList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
@@ -14,12 +14,11 @@
     overflow-y: scroll;
 }
 
-.storiesList::-webkit-scrollbar {
+.queueList::-webkit-scrollbar {
     width: 0;
 }
-
-.storyBox {
-    background-color: pink;
+.queueItem {
+    background-color: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

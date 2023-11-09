@@ -1,0 +1,26 @@
+.poemsContainer {
+    background-color: #fff;
+    padding: 20px;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+}
+  
+.poemsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.poemsList::-webkit-scrollbar {
+    width: 0; 
+}
+
+.poemBox {
+    background-color: pink;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
