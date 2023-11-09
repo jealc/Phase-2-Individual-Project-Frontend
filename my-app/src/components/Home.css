@@ -1,0 +1,14 @@
+.homeContainer {
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.welcomeText {
+    font-size: 25px;
+}
+
+.overView {
+    font-weight: 500;
+}

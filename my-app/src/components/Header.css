@@ -1,0 +1,47 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: E5E5E5;
+    color: Black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appName {
+    font-family: cursive;
+    font-size: 25px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.appName:hover {
+    color: red;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: center;
+}
+    
+nav li {
+    margin: 0 30px;
+}
+    
+.links {
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+  
+.links:hover {
+    color: red;
+}

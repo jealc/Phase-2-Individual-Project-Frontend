@@ -1,9 +1,11 @@
 import React from 'react';
+import './Home.css'
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to my app</h1>
+    <div className='homeContainer'>
+      <h1 className='welcomeText'>Welcome to ScrapSync</h1>
+      <p className='overView'>Explore and create stories and poems with our platform!</p>
     </div>
   );
 };
