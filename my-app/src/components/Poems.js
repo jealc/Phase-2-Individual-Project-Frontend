@@ -4,6 +4,7 @@ import './Poems.css';
 
 const Poems = () => {
   const [poems, setPoems] = useState([]);
+  const [confirmationMessage, setConfirmationMessage] = useState('');
 
   useEffect(() => {
     const fetchPoems = async () => {
@@ -16,15 +17,37 @@ const Poems = () => {
     };
 
     fetchPoems();
-  }, []);
+  }, [confirmationMessage]);
+
+  const handleEnqueue = async (id, type, title, description) => {
+    try {
+      await axios.post(`http://localhost:5000/queue`, {
+        id,
+        type,
+        title,
+        description
+      });
+      setConfirmationMessage(`${title} has been added to the queue.`);
+    } catch (error) {
+      console.error('Error enqueueing poem:', error);
+    }
+  };
 
   return (
     <div className="poemsContainer">
       <h2>Poems</h2>
+      {confirmationMessage && <p>{confirmationMessage}</p>}
       <div className="poemsList">
         {poems.map((poem) => (
           <div key={poem.id} className="poemBox">
-            <button className="enqueueButton">Enqueue</button>
+            <button
+              className="enqueueButton"
+              onClick={() =>
+                handleEnqueue(poem.id, 'poem', poem.title, poem.description)
+              }
+            >
+              Enqueue
+            </button>
             <h3>{poem.title}</h3>
             <p>{poem.description}</p>
           </div>

@@ -4,6 +4,7 @@ import './Stories.css';
 
 const Stories = () => {
   const [stories, setStories] = useState([]);
+  const [confirmationMessage, setConfirmationMessage] = useState('');
 
   useEffect(() => {
     const fetchStories = async () => {
@@ -16,15 +17,37 @@ const Stories = () => {
     };
 
     fetchStories();
-  }, []);
+  }, [confirmationMessage]);
+
+  const handleEnqueue = async (id, type, title, description) => {
+    try {
+      await axios.post(`http://localhost:5000/queue`, {
+        id,
+        type,
+        title,
+        description
+      });
+      setConfirmationMessage(`${title} has been added to the queue.`);
+    } catch (error) {
+      console.error('Error enqueueing story:', error);
+    }
+  };
 
   return (
     <div className="storiesContainer">
       <h2>Stories</h2>
+      {confirmationMessage && <p>{confirmationMessage}</p>}
       <div className="storiesList">
         {stories.map((story) => (
           <div key={story.id} className="storyBox">
-            <button className="enqueueButton">Enqueue</button>
+            <button
+              className="enqueueButton"
+              onClick={() =>
+                handleEnqueue(story.id, 'story', story.title, story.description)
+              }
+            >
+              Enqueue
+            </button>
             <h3>{story.title}</h3>
             <p>{story.description}</p>
           </div>

@@ -1,0 +1,46 @@
+.queueContainer {
+    background-color: #fff;
+    padding: 20px;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+}
+  
+.queueList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.queueList::-webkit-scrollbar {
+    width: 0;
+}
+
+.queueItem {
+    position: relative;
+    background-color: pink;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dequeueButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    padding: 10px 10px;
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.dequeueButton:hover {
+    background-color: black;
+    color: #fff;
+}
