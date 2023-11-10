@@ -19,13 +19,15 @@ const Poems = () => {
     fetchPoems();
   }, [confirmationMessage]);
 
-  const handleEnqueue = async (id, type, title, description) => {
+  const handleEnqueue = async (id, type, title, description, author, content) => {
     try {
       await axios.post(`http://localhost:5000/queue`, {
         id,
         type,
         title,
-        description
+        description,
+        author,
+        content,
       });
       setConfirmationMessage(`${title} has been added to the queue.`);
     } catch (error) {
@@ -43,13 +45,14 @@ const Poems = () => {
             <button
               className="enqueueButton"
               onClick={() =>
-                handleEnqueue(poem.id, 'poem', poem.title, poem.description)
+                handleEnqueue(poem.id, 'poem', poem.title, poem.description, poem.author, poem.content)
               }
             >
               Enqueue
             </button>
             <h3>{poem.title}</h3>
             <p>{poem.description}</p>
+            <h4>{poem.author}</h4>
           </div>
         ))}
       </div>

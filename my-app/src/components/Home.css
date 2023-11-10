@@ -17,3 +17,18 @@
 .overView {
     font-weight: 500;
 }
+
+.bottomBox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 95%; 
+    height: 100px; 
+    background-color: rgba(0, 123, 255, 0.5);
+    color: #fff; 
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}

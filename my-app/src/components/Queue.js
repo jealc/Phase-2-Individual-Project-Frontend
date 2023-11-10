@@ -5,6 +5,7 @@ import './Queue.css';
 const Queue = () => {
   const [queue, setQueue] = useState([]);
   const [confirmationMessage, setConfirmationMessage] = useState('');
+  const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     const fetchQueue = async () => {
@@ -32,24 +33,44 @@ const Queue = () => {
     }
   };
 
+  const handleRead = (item) => {
+    setSelectedItem(item);
+  };
+
+  const handleCloseRead = () => {
+    setSelectedItem(null);
+  };
+
   return (
     <div className="queueContainer">
       <h2>Queue</h2>
       {confirmationMessage && <p>{confirmationMessage}</p>}
-      {queue.length === 0 ? (
-        <p>No items in the queue. Enqueue some stories or poems!</p>
-      ) : (
+      <div className="queueSegment">
         <div className="queueList">
-          {queue.map((item) => (
-            <div key={item.id} className="queueItem">
-              <h3>{item.type === 'story' ? item.title : item.title}</h3>
-              <p>{item.type === 'story' ? item.description : item.description}</p>
-              <p>{item.type === 'story' ? 'Story' : 'Poem'}</p>
-              <button className='dequeueButton' onClick={() => handleRemove(item.id)}>Dequeue</button>
-            </div>
-          ))}
+          {queue.length === 0 ? (
+            <p>No items in the queue. Enqueue some stories or poems!</p>
+          ) : (
+            queue.map((item) => (
+              <div key={item.id} className="queueItem">
+                <h3>{item.type === 'story' ? item.title : item.title}</h3>
+                <p>{item.type === 'story' ? item.description : item.description}</p>
+                <p><b>{item.type === 'story' ? 'Story' : 'Poem'}</b></p>
+                <button className='dequeueButton' onClick={() => handleRemove(item.id)}>Dequeue</button>
+                <button className='readButton' onClick={() => handleRead(item)}>Read</button>
+              </div>
+            ))
+          )}
         </div>
-      )}
+        <div className="selectedItem">
+          {selectedItem && (
+            <div className="selectedItemContent">
+              <button className='closeButton' onClick={handleCloseRead}>Close</button>
+              <h3>{selectedItem.title}</h3>
+              <p>{selectedItem.content}</p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

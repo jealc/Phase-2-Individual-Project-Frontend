@@ -4,6 +4,8 @@
     height: auto;
     width: auto;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }
   
 .queueList {
@@ -12,6 +14,9 @@
     gap: 20px;
     max-height: 300px;
     overflow-y: scroll;
+    flex: 1; 
+    margin-right: 20px; 
+ 
 }
 
 .queueList::-webkit-scrollbar {
@@ -43,4 +48,44 @@
 .dequeueButton:hover {
     background-color: black;
     color: #fff;
+}
+
+.readButton {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px 10px;
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.readButton:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.queueSegment {
+    display: flex;
+    align-items: flex-start;
+}
+
+.selectedItem {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.closeButton {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
