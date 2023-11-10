@@ -4,7 +4,7 @@ import './Create.css';
 
 const Create = () => {
   const [isCreateVisible, setCreateVisible] = useState(false);
-  const [itemType, setItemType] = useState('story'); // Default to 'story'
+  const [itemType, setItemType] = useState('story'); 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [description, setDescription] = useState('');
