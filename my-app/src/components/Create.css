@@ -1,0 +1,11 @@
+.createContainer {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    height: 400px;
+    width: 600px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
