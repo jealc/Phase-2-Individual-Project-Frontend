@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 
 const Header = ({ onNavigation, onHomeClick }) => {
+  
   return (
     <header>
       <h1 className='appName' onClick={onHomeClick}>ScrapSync</h1>
