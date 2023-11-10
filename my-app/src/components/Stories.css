@@ -19,8 +19,28 @@
 }
 
 .storyBox {
+    position: relative;
     background-color: pink;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.enqueueButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    padding: 10px 10px;
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.enqueueButton:hover {
+    background-color: black;
+    color: #fff;
 }

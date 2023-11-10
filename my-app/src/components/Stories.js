@@ -19,14 +19,14 @@ const Stories = () => {
   }, []);
 
   return (
-    <div className='storiesContainer'>
+    <div className="storiesContainer">
       <h2>Stories</h2>
-      <div className='storiesList'>
+      <div className="storiesList">
         {stories.map((story) => (
-          <div key={story.id} className='storyBox'>
+          <div key={story.id} className="storyBox">
+            <button className="enqueueButton">Enqueue</button>
             <h3>{story.title}</h3>
             <p>{story.description}</p>
-            {/* Display other details of the story as needed */}
           </div>
         ))}
       </div>

@@ -19,14 +19,14 @@ const Poems = () => {
   }, []);
 
   return (
-    <div className='poemsContainer'>
+    <div className="poemsContainer">
       <h2>Poems</h2>
-      <div className='poemsList'>
+      <div className="poemsList">
         {poems.map((poem) => (
-          <div key={poem.id} className='poemBox'>
+          <div key={poem.id} className="poemBox">
+            <button className="enqueueButton">Enqueue</button>
             <h3>{poem.title}</h3>
             <p>{poem.description}</p>
-            {/* Display other details of the poem as needed */}
           </div>
         ))}
       </div>
