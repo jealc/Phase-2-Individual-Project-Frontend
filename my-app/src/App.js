@@ -5,6 +5,7 @@ import Stories from './components/Stories';
 import Poems from './components/Poems';
 import Queue from './components/Queue';
 import Create from './components/Create';
+import WritePiece from './components/WritePiece';
 import './App.css';
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
         return <Queue />;
       case 'create':
         return <Create />;
+      case 'writepiece':
+        return <WritePiece />;
       default:
         return <Home />;
     }
