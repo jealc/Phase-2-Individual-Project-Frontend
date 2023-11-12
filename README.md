@@ -19,7 +19,7 @@ The root of this project is a React single page application called, ScrapSync. T
 
 ## ScrapSync; Launcing the Application
 The backend for this project is contained on a separate github repository that is accessible via this link: https://github.com/jealc/Phase-2-Individual-Project-Backend.
--For the first step, open both repositories (for the frontend and backend) and clone them and open them on VS code on your local machine.
+-For the first step, clone and open both repositories (for the frontend and backend) onto VS code on your local machine.
 -Load up the backend by running this command on your terminal: 'json-server --watch db.json --port 5000' to load up the JSON Server.
 -Next load up the app by running this command on your terminal: 'npm start' and this will launch the app on localhost: 3000. (MAKE SURE TO 'cd' INTO 'my-app' BEFORE RUNNING THIS COMMAND).
 
